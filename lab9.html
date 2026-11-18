@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f2ea">
+    <title>Лаб 9 | Зургийн цомог — санал хүсэлт</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="lab7-gallery.css">
+    <link rel="stylesheet" href="lab9-gallery-feedback.css">
+    <script src="lab7-gallery.js" defer></script>
+    <script src="lab9-gallery-feedback.js" type="module"></script>
+  </head>
+  <body>
+    <div class="loader" role="status" aria-live="polite">
+      <span class="loader__spinner" aria-hidden="true"></span>
+      <span>Зургийн цомог ачаалж байна...</span>
+    </div>
+    <div class="page">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="lab9 нүүр хуудас">
+          <svg class="brand__mark" viewBox="0 0 64 64" role="img" aria-label="Зургийн gallery лого">
+            <defs>
+              <linearGradient id="logo-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="var(--logo-start)"/>
+                <stop offset="1" stop-color="var(--logo-end)"/>
+              </linearGradient>
+            </defs>
+            <rect x="4" y="4" width="56" height="56" rx="16" fill="var(--brand-soft)"/>
+            <rect x="13" y="13" width="38" height="38" rx="8" fill="url(#logo-gradient)"/>
+            <circle cx="40" cy="24" r="4" fill="var(--sun)"/>
+            <path d="m16 43 10-12 7 8 5-6 10 11v4H16v-5Z" fill="var(--brand-soft)"/>
+          </svg>
+          <span>
+            <strong class="brand__name">Зургийн цомог портал</strong>
+            <small class="brand__tag">Дэлхийн Уран зургууд</small>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Үндсэн цэс">
+          <a href="#gallery">Цомог</a>
+          <a href="#location">Байршил</a>
+          <a href="#feedback">Санал хүсэлт</a>
+        </nav>
+        <button class="theme-toggle" type="button" aria-pressed="false">
+          <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+          <span class="theme-toggle__label">Харанхуй горим</span>
+        </button>
+      </header>
+      <main id="top">
+        <section class="hero" aria-labelledby="page-title">
+          <div>
+            <h1 id="page-title">Зураг бүр өөрийн гэсэн түүхтэй</h1>
+            <p class="hero__lead">Дэлхийд алдартай уран зургуудыг нэг дороос үзээрэй.</p>
+            <a class="button button--primary" href="#gallery">Зургийн цомог үзэх</a>
+            <ul class="hero__stats" aria-label="Цомгийн мэдээлэл">
+              <li><strong>08</strong><span>уран зураг</span></li>
+              <li><strong>06</strong><span>улс орон</span></li>
+              <li><strong>500+</strong><span>жилийн урлаг</span></li>
+            </ul>
+          </div>
+          <div class="hero__media">
+            <video controls autoplay muted preload="metadata" playsinline poster="art-gallery-video-poster.jpg">
+              <source src="mona-lisa-5-sec.mp4" type="video/mp4">
+              <track kind="captions" src="captions.vtt" srclang="mn" label="Монгол хадмал" default>
+              Таны хөтөч видео тоглуулах боломжгүй байна.
+            </video>
+          </div>
+        </section>
+        <section id="gallery" class="gallery" aria-labelledby="gallery-title">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">GALLERY</p>
+            <h2 class="section-heading__title" id="gallery-title">Уран Зургууд</h2>
+            <p class="section-heading__description">Дэлхийн алдартай бүтээлүүдийн түүхтэй танилцаарай.</p>
+          </div>
+          <div class="gallery__grid">
+            <article class="artwork-card" tabindex="0" style="--index: 0" aria-label="Starry Night">
+              <div class="artwork-card__inner">
+                <div class="artwork-card__face artwork-card__face--front">
+                  <img src="https://ergelt.mn/upload/images/13492928_the-starry-night-van-gogh-reproduction.jpg" alt="Одтой шөнө" loading="lazy">
+                  <div class="artwork-card__overlay"><h3>Starry Night</h3><p>Vincent van Gogh · Netherlands</p></div>
+                </div>
+                <div class="artwork-card__face artwork-card__face--back"><h3>Starry Night</h3><ul><li><strong>Огноо:</strong> 1889</li><li><strong>Тайлбар:</strong> Одтой шөнө</li></ul></div>
+              </div>
+            </article>
+            <article class="artwork-card" tabindex="0" style="--index: 1" aria-label="The Mona Lisa">
+              <div class="artwork-card__inner">
+                <div class="artwork-card__face artwork-card__face--front">
+                  <img src="https://ergelt.mn/upload/images/d248d9efd60b860d471d158c857672f2.jpg" alt="Сууж буй эмэгтэй" loading="lazy">
+                  <div class="artwork-card__overlay"><h3>The Mona Lisa</h3><p>Leonardo da Vinci · Italy</p></div>
+                </div>
+                <div class="artwork-card__face artwork-card__face--back"><h3>The Mona Lisa</h3><ul><li><strong>Огноо:</strong> 1504</li><li><strong>Тайлбар:</strong> Гунигтайхан харж, учиртай инээмсэглэх</li></ul></div>
+              </div>
+            </article>
+            <article class="artwork-card" tabindex="0" style="--index: 2" aria-label="Girl with a Pearl Earring">
+              <div class="artwork-card__inner">
+                <div class="artwork-card__face artwork-card__face--front">
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.zmS9s2PUa8_zkrKzwgU7pgHaIx?r=0&amp;pid=ImgDet&amp;w=474&amp;h=561&amp;rs=1&amp;o=7&amp;rm=3" alt="Сувдан ээмэгт бүсгүй" loading="lazy">
+                  <div class="artwork-card__overlay"><h3>Girl with a Pearl Earring</h3><p>Johannes Vermeer · Netherland</p></div>
+                </div>
+                <div class="artwork-card__face artwork-card__face--back"><h3>Girl with a Pearl Earring</h3><ul><li><strong>Огноо:</strong> 1665</li><li><strong>Тайлбар:</strong> Сувдан ээмэгт бүсгүй</li></ul></div>
+              </div>
+            </article>
+            <article class="artwork-card" tabindex="0" style="--index: 3" aria-label="The Scream">
+              <div class="artwork-card__inner">
+                <div class="artwork-card__face artwork-card__face--front">
+                  <img src="https://ergelt.mn/upload/images/MUSEUM-superJumbo.jpg" alt="Хашхирч буй хүн" loading="lazy">
+                  <div class="artwork-card__overlay"><h3>The Scream</h3><p>Edvard Munch · Norway</p></div>
+                </div>
+                <div class="artwork-card__face artwork-card__face--back"><h3>The Scream</h3><ul><li><strong>Огноо:</strong> 1893</li><li><strong>Тайлбар:</strong> Хашхираан</li></ul></div>
+              </div>
+            </article>
+            <article class="artwork-card" tabindex="0" style="--index: 1" aria-label="The Kiss">
+              <div class="artwork-card__inner">
+                <div class="artwork-card__face artwork-card__face--front">
+                  <img src="https://ergelt.mn/upload/images/The-Kiss.jpg" alt="Үнсүүлж буй хүн" loading="lazy">
+                  <div class="artwork-card__overlay"><h3>The Kiss</h3><p>Gustav Klimt · Austria</p></div>
+                </div>
+                <div class="artwork-card__face artwork-card__face--back"><h3>The Kiss</h3><ul><li><strong>Огноо:</strong> 1908</li><li><strong>Тайлбар:</strong> Үнсэлт</li></ul></div>
+              </div>
+            </article>
+            <article class="artwork-card" tabindex="0" style="--index: 1" aria-label="The Woman of Algiers">
+              <div class="artwork-card__inner">
+                <div class="artwork-card__face artwork-card__face--front">
+                  <img src="https://cdn.luxatic.com/wp-content/uploads/2019/02/Pablo-Picasso.jpg" alt="Алжирийн эмэгтэйчүүд" loading="lazy">
+                  <div class="artwork-card__overlay"><h3>The Woman of Algiers</h3><p>Pablo Picasso · Spain</p></div>
+                </div>
+                <div class="artwork-card__face artwork-card__face--back"><h3>The Woman of Algiers</h3><ul><li><strong>Огноо:</strong> 1955</li><li><strong>Тайлбар:</strong> Алжирийн эмэгтэйчүүд</li></ul></div>
+              </div>
+            </article>
+            <article class="artwork-card" tabindex="0" style="--index: 2" aria-label="The Great Wave off Kanagawa">
+              <div class="artwork-card__inner">
+                <div class="artwork-card__face artwork-card__face--front">
+                  <img src="https://i.pinimg.com/originals/a9/86/49/a98649efbbc59a66f0aca5894053517a.jpg" alt="Цунами" loading="lazy">
+                  <div class="artwork-card__overlay"><h3>The Great Wave off Kanagawa</h3><p>Katsushika Hokusai · Japan</p></div>
+                </div>
+                <div class="artwork-card__face artwork-card__face--back"><h3>The Great Wave off Kanagawa</h3><ul><li><strong>Огноо:</strong> 1831</li><li><strong>Тайлбар:</strong> Канагавагийн их давалгаа</li></ul></div>
+              </div>
+            </article>
+            <article class="artwork-card" tabindex="0" style="--index: 2" aria-label="The Last Supper">
+              <div class="artwork-card__inner">
+                <div class="artwork-card__face artwork-card__face--front">
+                  <img src="https://images.immediate.co.uk/production/volatile/sites/7/2021/03/GettyImages-550119221-e490377.jpg" alt="Сүүлчийн зоог" loading="lazy">
+                  <div class="artwork-card__overlay"><h3>The Last Supper</h3><p>Leonardo Da Vinci · Italy</p></div>
+                </div>
+                <div class="artwork-card__face artwork-card__face--back"><h3>The Last Supper</h3><ul><li><strong>Огноо:</strong> 1498</li><li><strong>Тайлбар:</strong> Сүүлчийн зоог</li></ul></div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section id="location" class="location" aria-labelledby="map-title">
+          <div class="section-heading"><p class="section-heading__eyebrow">LOCATION</p><h2 class="section-heading__title" id="map-title">Байршил</h2></div>
+          <iframe class="location__map" title="Улаанбаатар хотын газрын зураг" src="https://www.google.com/maps?q=Ulaanbaatar&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <section id="feedback" class="feedback" aria-labelledby="feedback-title">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">ТАНЫ САНАЛ БИДЭНД ЧУХАЛ</p>
+            <h2 class="section-heading__title" id="feedback-title">Санал хүсэлт илгээх</h2>
+            <p class="section-heading__description">Цомгийн талаар санал, сэтгэгдлээ хуваалцаарай.</p>
+          </div>
+          <form id="feedback-form" class="feedback__form" novalidate>
+            <div class="feedback__fields">
+              <div class="feedback__field">
+                <label for="feedback-name">Нэр</label>
+                <input id="feedback-name" name="name" type="text" autocomplete="name" placeholder="Таны нэр" aria-describedby="feedback-name-error" required>
+                <p class="feedback__error" id="feedback-name-error" hidden></p>
+              </div>
+              <div class="feedback__field">
+                <label for="feedback-email">Имэйл</label>
+                <input id="feedback-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" aria-describedby="feedback-email-error" required>
+                <p class="feedback__error" id="feedback-email-error" hidden></p>
+              </div>
+              <div class="feedback__field">
+                <label for="feedback-password">Нууц үг</label>
+                <input id="feedback-password" name="password" type="password" autocomplete="new-password" placeholder="Дор хаяж 8 тэмдэгт" aria-describedby="feedback-password-error feedback-password-hint" required>
+                <p class="feedback__hint" id="feedback-password-hint">Латин эсвэл кирилл үсэг, тоо хослуулна.</p>
+                <p class="feedback__error" id="feedback-password-error" hidden></p>
+              </div>
+              <div class="feedback__field feedback__field--message">
+                <label for="feedback-message">Санал хүсэлт</label>
+                <textarea id="feedback-message" name="message" placeholder="Сэтгэгдлээ энд бичнэ үү…" aria-describedby="feedback-message-error" required></textarea>
+                <p class="feedback__error" id="feedback-message-error" hidden></p>
+              </div>
+            </div>
+            <div class="feedback__actions">
+              <button class="button button--primary feedback__submit" type="submit">Санал хүсэлт илгээх</button>
+              <p class="feedback__status" id="feedback-status" role="status" aria-live="polite">Демо форм — таны мэдээллийг серверт хадгалахгүй.</p>
+            </div>
+          </form>
+        </section>
+      </main>
+      <footer>Лаборатори 9 · Санал хүсэлтийн форм</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
